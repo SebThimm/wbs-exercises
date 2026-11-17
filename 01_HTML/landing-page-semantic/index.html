@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Adoption Agency</title>
+</head>
+<body>
+    <header>
+        <h1>Find Your Furry Friend!</h1>
+        <p>Welcome to our dog adoption agency! Here you can find your perfect companion.</p>
+        <p>Browse through our list of adorable dogs available for adoption and give them a loving home.</p>
+        <p>Contact us for more information or to schedule a visit.</p>
+    </header>
+
+    <main>
+        <section aria-labelledby="about">
+            <h2 id="about">About Us</h2>
+            <p>We are a non-profit organization dedicated to finding loving homes for dogs in need.</p>
+        </section>
+
+        <section aria-labelledby="why-adopt">
+            <h2 id="why-adopt">Why Adopt From Us?</h2>
+            <ul>
+                <li>All dogs are vaccinated and spayed/neutered.</li>
+                <li>We provide support and resources for new pet owners.</li>
+                <li>All dogs are house-trained and socialized.</li>
+                <li>Adopting a dog saves lives and gives them a second chance.</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="dogs">
+            <h2 id="dogs">Meet Our Dogs</h2>
+
+            <ul class="dog-list">
+                <li>
+                    <h3>Buddy</h3>
+                    <!-- Replace the random image with an actual photo of Buddy. -->
+                    <img src="https://placedog.net/300/random" alt="Buddy, a friendly Labrador Retriever">
+                    <p>A friendly Labrador Retriever, 3 years old.</p>
+                </li>
+                <li>
+                    <h3>Luna</h3>
+                    <!-- Replace the random image with an actual photo of Luna. -->
+                    <img src="https://placedog.net/300/random" alt="Luna, a playful Beagle">
+                    <p>A playful Beagle, 2 years old.</p>
+                </li>
+                <li>
+                    <h3>Max</h3>
+                    <!-- Replace the random image with an actual photo of Max. -->
+                    <img src="https://placedog.net/300/random" alt="Max, a loyal German Shepherd">
+                    <p>A loyal German Shepherd, 4 years old.</p>
+                </li>
+                <li>
+                    <h3>Daisy</h3>
+                    <!-- Replace the random image with an actual photo of Daisy. -->
+                    <img src="https://placedog.net/300/random" alt="Daisy, a sweet Golden Retriever">
+                    <p>A sweet Golden Retriever, 1 year old.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="contact">
+            <h2 id="contact">Get in Touch</h2>
+            <p>Have questions about our dogs or the adoption process? Get in touch with us!</p>
+
+            <form action="submit_form.php" method="post">
+                <p>
+                    <label for="name">Name:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        autocomplete="name"
+                        required
+                    >
+                </p>
+
+                <p>
+                    <label for="email">Email:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                    >
+                </p>
+
+                <p>
+                    <label for="message">Message:</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="4"
+                        required
+                    ></textarea>
+                </p>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p><small>&copy; 2024 Dog Adoption Agency. All rights reserved.</small></p>
+    </footer>
+</body>
+</html>

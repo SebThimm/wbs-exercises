@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | CodePath Coding School</title>
+</head>
+<body>
+    <main>
+        <h1>Sign Up for CodePath Coding School</h1>
+        <p>Start your coding journey by choosing a bootcamp.</p>
+        <p>All fields are required.</p>
+
+        <form action="submit_signup.php" method="post">
+            <fieldset>
+                <legend>Candidate registration</legend>
+
+                <p>
+                    <label for="name">Full name:</label><br>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        autocomplete="name"
+                        pattern=".*\S.*"
+                        title="Enter your name, not just spaces."
+                        required
+                    >
+                </p>
+
+                <p>
+                    <label for="email">Email address:</label><br>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                    >
+                </p>
+
+                <p>
+                    <label for="telephone">Telephone number:</label><br>
+                    <input
+                        type="tel"
+                        id="telephone"
+                        name="telephone"
+                        autocomplete="tel"
+                        aria-describedby="telephone-help"
+                        required
+                    >
+                    <br>
+                    <small id="telephone-help">
+                        Include your country code, for example +49 151 23456789.
+                    </small>
+                </p>
+
+                <p>
+                    <label for="password">Create a password:</label><br>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        autocomplete="new-password"
+                        minlength="12"
+                        aria-describedby="password-help"
+                        required
+                    >
+                    <br>
+                    <small id="password-help">
+                        Use at least 12 characters. Spaces are allowed.
+                    </small>
+                </p>
+
+                <p>
+                    <label for="bootcamp">Choose your bootcamp:</label><br>
+                    <select id="bootcamp" name="bootcamp" required>
+                        <option value="" disabled selected>Select a bootcamp</option>
+                        <option value="frontend">Front-End Web Development</option>
+                        <option value="backend">Back-End Web Development</option>
+                        <option value="fullstack">Full-Stack Web Development</option>
+                        <option value="data-science">Data Science</option>
+                    </select>
+                </p>
+
+                <button type="submit">Sign up</button>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>
