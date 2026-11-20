@@ -1,0 +1,458 @@
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Colours and shared values ---------- */
+
+:root {
+  --cream: #f5efe5;
+  --paper: #fffaf2;
+  --espresso: #30251f;
+  --muted: #716256;
+  --terracotta: #914c36;
+  --line: #d9cabc;
+
+  --content-width: 72rem;
+}
+
+/* ---------- Base styles ---------- */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background: var(--cream);
+  color: var(--espresso);
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.3em;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--terracotta);
+  outline-offset: 5px;
+}
+
+/* ---------- Header ---------- */
+
+body > header {
+  width: min(var(--content-width), calc(100% - 4rem));
+  margin-inline: auto;
+  padding-block: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.wordmark {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.06em;
+  text-decoration: none;
+}
+
+.wordmark span {
+  display: block;
+  margin-top: 0.6rem;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+
+  list-style: none;
+}
+
+nav a {
+  display: inline-block;
+  padding-block: 0.35rem;
+
+  border-bottom: 2px solid transparent;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  color: var(--terracotta);
+  border-bottom-color: var(--terracotta);
+}
+
+/* ---------- Main content ---------- */
+
+main {
+  flex: 1;
+
+  width: min(var(--content-width), calc(100% - 4rem));
+  margin-inline: auto;
+  padding-block: 5rem;
+}
+
+h1 {
+  max-width: 12ch;
+  margin-bottom: 2rem;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+}
+
+main > p {
+  max-width: 62ch;
+  color: var(--muted);
+}
+
+main > p + p {
+  margin-top: 1rem;
+}
+
+main > p:first-of-type {
+  color: var(--espresso);
+  font-size: 1.25rem;
+}
+
+/* ---------- Home page ---------- */
+
+.page-home h1::before {
+  content: "Your daily pause";
+  display: block;
+  margin-bottom: 1.5rem;
+
+  color: var(--terracotta);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.page-home main > img {
+  width: 100%;
+  height: clamp(18rem, 45vw, 34rem);
+  margin-top: 3rem;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 10rem 10rem 0.5rem 0.5rem;
+}
+
+/* ---------- About page ---------- */
+
+.page-about main {
+  max-width: 56rem;
+  padding-block: 6rem;
+}
+
+.page-about h1 {
+  margin-bottom: 3rem;
+}
+
+.page-about main > p {
+  max-width: 58ch;
+}
+
+.page-about main > p:first-of-type {
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--terracotta);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  line-height: 1.5;
+}
+
+.page-about main > p + p {
+  margin-top: 2rem;
+}
+
+/* ---------- Contact page layout ---------- */
+
+.page-contact main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem 4rem;
+  align-items: start;
+}
+
+.page-contact h1 {
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 0;
+}
+
+.page-contact main > p {
+  grid-column: 1;
+  grid-row: 2;
+
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.page-contact main > img {
+  grid-column: 1;
+  grid-row: 3;
+
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+
+  border-radius: 0.5rem 0.5rem 6rem 0.5rem;
+}
+
+.page-contact form {
+  grid-column: 2;
+  grid-row: 1 / 4;
+}
+
+/* ---------- Contact form ---------- */
+
+.form-intro {
+  margin-bottom: 1.5rem;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.form-note {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+form {
+  min-width: 0;
+  padding: 2.5rem;
+
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--paper);
+
+  box-shadow: 0 1rem 3rem rgb(48 37 31 / 5%);
+}
+
+form > p + p {
+  margin-top: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 0.85rem 1rem;
+
+  border: 1px solid var(--line);
+  border-radius: 0.2rem;
+  background: var(--cream);
+  color: var(--espresso);
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+input:hover,
+textarea:hover {
+  border-color: var(--muted);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--terracotta);
+  background: white;
+}
+
+textarea {
+  min-height: 11rem;
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+
+  border: 1px solid var(--espresso);
+  border-radius: 0.2rem;
+  background: var(--espresso);
+  color: var(--paper);
+
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+button:hover {
+  border-color: var(--terracotta);
+  background: var(--terracotta);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+
+  padding: 2rem max(2rem, calc((100% - 72rem) / 2));
+
+  border-top: 1px solid var(--line);
+  background: var(--espresso);
+  color: var(--cream);
+}
+
+.site-footer p:first-child {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.6rem;
+  letter-spacing: -0.05em;
+}
+
+.site-footer p:nth-child(2) {
+  font-size: 0.9rem;
+}
+
+.site-footer small {
+  font-size: 0.75rem;
+}
+
+/* ---------- Smaller screens ---------- */
+
+@media (max-width: 48rem) {
+  body > header,
+  main {
+    width: calc(100% - 2.5rem);
+  }
+
+  body > header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding-block: 1.5rem;
+  }
+
+  nav ul {
+    gap: 1.5rem;
+  }
+
+  main,
+  .page-about main {
+    padding-block: 3rem;
+  }
+
+  .page-home main > img {
+    border-radius: 5rem 5rem 0.5rem 0.5rem;
+  }
+
+  .page-contact main {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .page-contact h1,
+  .page-contact main > p,
+  .page-contact main > img,
+  .page-contact form {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .page-contact main > img {
+    max-height: 20rem;
+  }
+
+  form {
+    padding: 1.5rem;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 2rem 1.25rem;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

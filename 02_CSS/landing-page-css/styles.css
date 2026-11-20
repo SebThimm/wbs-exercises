@@ -1,0 +1,1278 @@
+/* ---------- Reset and design tokens ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #242020;
+  --paper: #fffdf5;
+  --yellow: #ffe66d;
+  --lilac: #c5b4ed;
+  --pink: #ffb9ca;
+  --mint: #c5e5d2;
+
+  --border: 3px solid var(--ink);
+  --shadow: 6px 6px 0 var(--ink);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 5px;
+}
+
+section[id] {
+  scroll-margin-top: 2rem;
+}
+
+.section-shell {
+  padding: 5rem max(1.5rem, calc((100% - 1200px) / 2));
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+.logo {
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+
+  padding: 1rem 1.5rem;
+  border: var(--border);
+  border-radius: 0.5rem;
+
+  background: var(--yellow);
+  box-shadow: var(--shadow);
+
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.button span {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.button:active {
+  transform: translate(5px, 5px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  padding: 1.5rem max(1.5rem, calc((100% - 1200px) / 2));
+  border-bottom: var(--border);
+  background: var(--yellow);
+}
+
+.logo {
+  display: inline-block;
+  flex-shrink: 0;
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+
+.logo span {
+  display: block;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
+}
+
+nav a {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 4rem;
+
+  padding: 5rem max(1.5rem, calc((100% - 1200px) / 2));
+  overflow: hidden;
+  background: var(--yellow);
+}
+
+.hero h1 {
+  font-size: clamp(3.5rem, 7.5vw, 7rem);
+}
+
+.hero h1 span {
+  color: #674291;
+}
+
+.hero-description {
+  max-width: 40ch;
+  margin: 1.75rem 0 2rem;
+  font-size: 1.15rem;
+}
+
+.hero .button {
+  background: var(--paper);
+}
+
+.hero-art {
+  position: relative;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.hero-photo {
+  overflow: hidden;
+  border: var(--border);
+  border-radius: 48% 48% 1rem 1rem;
+  background: var(--lilac);
+  box-shadow: 10px 10px 0 var(--ink);
+  transform: rotate(4deg);
+}
+
+.hero-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.sticker {
+  position: absolute;
+  right: -0.5rem;
+  bottom: 1.5rem;
+
+  display: grid;
+  place-content: center;
+  width: 8rem;
+  aspect-ratio: 1;
+
+  border: var(--border);
+  border-radius: 50%;
+  background: var(--pink);
+
+  font-size: 1.4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+
+  transform: rotate(12deg);
+}
+
+.hero-spark {
+  position: absolute;
+  top: -2rem;
+  left: -1.5rem;
+  color: var(--ink);
+  font-size: 7rem;
+  line-height: 1;
+}
+
+/* ---------- Graphic divider ---------- */
+
+.ticker {
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
+  overflow: hidden;
+
+  padding: 1rem;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  background: var(--ink);
+  color: var(--yellow);
+
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+/* ---------- About ---------- */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-copy {
+  font-size: 1.1rem;
+}
+
+.about-copy p + p {
+  margin-top: 1rem;
+}
+
+/* ---------- Benefits ---------- */
+
+.benefits {
+  border-top: var(--border);
+  border-bottom: var(--border);
+  background: var(--lilac);
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+
+  margin-top: 3rem;
+  list-style: none;
+}
+
+.benefit-grid li {
+  padding: 2rem;
+  border: var(--border);
+  border-radius: 1rem;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.benefit-number {
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  aspect-ratio: 1;
+
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--yellow);
+  font-weight: 900;
+}
+
+.benefit-grid h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.6rem;
+}
+
+Let’s make this one feel like a playful adoption campaign: butter yellow, oversized typography, lilac panels, chunky borders, slightly tilted dog cards, and buttons with hard shadows.
+
+I’d also tidy up the HTML while we’re at it: give each dog a proper card, remove the stray </li> tags and spacing <br> elements, and add a header, navigation, main content, and footer.
+
+Replace your HTML with the following, then put the CSS in styles.css.
+HTML
+
+The photos remain random placeholders, so the descriptions do not claim to describe the pictured dogs.
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Meet your new best friend. Explore our dogs and get in touch about adoption."
+    >
+    <link rel="stylesheet" href="styles.css">
+    <title>Good Dogs Club — Dog Adoption Agency</title>
+</head>
+<body>
+    <header class="site-header">
+        <a class="logo" href="#" aria-label="Good Dogs Club home">
+            Good Dogs<span>Club.</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <a href="#about">Our story</a>
+            <a href="#dogs">The dogs</a>
+            <a href="#contact">Say hello</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <p class="eyebrow">Small agency. Big dog energy.</p>
+
+                <h1 id="hero-title">
+                    Your new<br>
+                    <span>best friend.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Excellent company. Questionable personal boundaries.
+                    Meet the dogs looking for a place on your sofa—and in your life.
+                </p>
+
+                <a class="button" href="#dogs">Meet the dogs <span aria-hidden="true">↗</span></a>
+            </div>
+
+            <div class="hero-art">
+                <div class="hero-photo">
+                    <img
+                        src="https://placedog.net/800/900?id=10"
+                        alt="A dog featured in our adoption website demo"
+                        width="800"
+                        height="900"
+                    >
+                </div>
+
+                <p class="sticker">100%<br>good dog</p>
+                <span class="hero-spark" aria-hidden="true">✳</span>
+            </div>
+        </section>
+
+        <div class="ticker" aria-hidden="true">
+            <span>GOOD DOGS. FRESH STARTS. HAPPY HOMES.</span>
+            <span>GOOD DOGS. FRESH STARTS. HAPPY HOMES.</span>
+        </div>
+
+        <section class="about section-shell" id="about" aria-labelledby="about-title">
+            <div>
+                <p class="eyebrow">Our story</p>
+                <h2 id="about-title">Second chances.<br>First-class dogs.</h2>
+            </div>
+
+            <div class="about-copy">
+                <p>
+                    We’re a non-profit organization helping dogs find loving homes.
+                    We believe every dog deserves a fresh start—and a person
+                    who thinks they’re the best dog in the world.
+                </p>
+                <p>
+                    Browse our dogs, ask us questions, and come meet your
+                    potential new housemate. We’re here to help you find
+                    the right match.
+                </p>
+            </div>
+        </section>
+
+        <section class="benefits section-shell" aria-labelledby="benefits-title">
+            <p class="eyebrow">More than a cute face</p>
+            <h2 id="benefits-title">A little support.<br>A whole lot of love.</h2>
+
+            <ul class="benefit-grid">
+                <li>
+                    <span class="benefit-number" aria-hidden="true">01</span>
+                    <h3>A fresh start</h3>
+                    <p>Give a dog a second chance and a home where they belong.</p>
+                </li>
+                <li>
+                    <span class="benefit-number" aria-hidden="true">02</span>
+                    <h3>Find your match</h3>
+                    <p>Talk to us about your home, your routine, and your ideal companion.</p>
+                </li>
+                <li>
+                    <span class="benefit-number" aria-hidden="true">03</span>
+                    <h3>You’re not alone</h3>
+                    <p>We provide support and resources for new pet owners.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="dogs section-shell" id="dogs" aria-labelledby="dogs-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">The very good lineup</p>
+                    <h2 id="dogs-title">Meet the dogs.</h2>
+                </div>
+                <p>Four good reasons to clear some space on the sofa.</p>
+            </div>
+
+            <div class="dog-grid">
+                <article class="dog-card">
+                    <div class="dog-photo">
+                        <img
+                            src="https://placedog.net/600/700?id=1"
+                            alt="Placeholder dog photo for Buddy"
+                            width="600"
+                            height="700"
+                            loading="lazy"
+                        >
+                        <span class="dog-tag">The social one</span>
+                    </div>
+
+                    <div class="dog-info">
+                        <h3>Buddy</h3>
+                        <p class="dog-meta">Labrador Retriever · 3 years</p>
+                        <p>A friendly face looking for a friend for life.</p>
+                        <a href="#contact">Ask about Buddy <span aria-hidden="true">↗</span></a>
+                    </div>
+                </article>
+
+                <article class="dog-card">
+                    <div class="dog-photo">
+                        <img
+                            src="https://placedog.net/600/700?id=2"
+                            alt="Placeholder dog photo for Luna"
+                            width="600"
+                            height="700"
+                            loading="lazy"
+                        >
+                        <span class="dog-tag">Playtime professional</span>
+                    </div>
+
+                    <div class="dog-info">
+                        <h3>Luna</h3>
+                        <p class="dog-meta">Beagle · 2 years</p>
+                        <p>Playful, curious, and ready for her next adventure.</p>
+                        <a href="#contact">Ask about Luna <span aria-hidden="true">↗</span></a>
+                    </div>
+                </article>
+
+                <article class="dog-card">
+                    <div class="dog-photo">
+                        <img
+                            src="https://placedog.net/600/700?id=3"
+                            alt="Placeholder dog photo for Max"
+                            width="600"
+                            height="700"
+                            loading="lazy"
+                        >
+                        <span class="dog-tag">Your loyal sidekick</span>
+                    </div>
+
+                    <div class="dog-info">
+                        <h3>Max</h3>
+                        <p class="dog-meta">German Shepherd · 4 years</p>
+                        <p>A loyal companion looking for his favourite person.</p>
+                        <a href="#contact">Ask about Max <span aria-hidden="true">↗</span></a>
+                    </div>
+                </article>
+
+                <article class="dog-card">
+                    <div class="dog-photo">
+                        <img
+                            src="https://placedog.net/600/700?id=4"
+                            alt="Placeholder dog photo for Daisy"
+                            width="600"
+                            height="700"
+                            loading="lazy"
+                        >
+                        <span class="dog-tag">Certified sweetheart</span>
+                    </div>
+
+                    <div class="dog-info">
+                        <h3>Daisy</h3>
+                        <p class="dog-meta">Golden Retriever · 1 year</p>
+                        <p>A sweet young dog with a whole lot of love to give.</p>
+                        <a href="#contact">Ask about Daisy <span aria-hidden="true">↗</span></a>
+                    </div>
+                </article>
+            </div>
+
+            <p class="demo-note">
+                Demo website: photos are placeholders, not verified photos of the dogs described.
+            </p>
+        </section>
+
+        <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
+            <div class="contact-copy">
+                <p class="eyebrow">Let’s make introductions</p>
+                <h2 id="contact-title">A good thing<br>starts with hello.</h2>
+                <p>
+                    Spotted your potential best friend? Have a question about
+                    adoption? Tell us a little about yourself.
+                </p>
+                <span class="contact-flower" aria-hidden="true">✳</span>
+            </div>
+
+            <form action="submit_form.php" method="post">
+                <div class="form-field">
+                    <label for="name">Your name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="email">Email address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="dog">Who caught your eye?</label>
+                    <select id="dog" name="dog">
+                        <option value="">I’m still looking</option>
+                        <option value="buddy">Buddy</option>
+                        <option value="luna">Luna</option>
+                        <option value="max">Max</option>
+                        <option value="daisy">Daisy</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="message">Your message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        required
+                    ></textarea>
+                </div>
+
+                <button class="button" type="submit">
+                    Send your hello <span aria-hidden="true">↗</span>
+                </button>
+
+                <p class="form-note">
+                    Demo form. A working server endpoint is needed to receive messages.
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="logo" href="#">Good Dogs<span>Club.</span></a>
+        <p>A little less lonely. A lot more dog hair.</p>
+        <small>&copy; 2026 Good Dogs Club. Demo adoption website.</small>
+    </footer>
+</body>
+</html>
+
+CSS
+
+css
+/* ---------- Reset and design tokens ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #242020;
+  --paper: #fffdf5;
+  --yellow: #ffe66d;
+  --lilac: #c5b4ed;
+  --pink: #ffb9ca;
+  --mint: #c5e5d2;
+
+  --border: 3px solid var(--ink);
+  --shadow: 6px 6px 0 var(--ink);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 5px;
+}
+
+section[id] {
+  scroll-margin-top: 2rem;
+}
+
+.section-shell {
+  padding: 5rem max(1.5rem, calc((100% - 1200px) / 2));
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+.logo {
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+
+  padding: 1rem 1.5rem;
+  border: var(--border);
+  border-radius: 0.5rem;
+
+  background: var(--yellow);
+  box-shadow: var(--shadow);
+
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.button span {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.button:active {
+  transform: translate(5px, 5px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  padding: 1.5rem max(1.5rem, calc((100% - 1200px) / 2));
+  border-bottom: var(--border);
+  background: var(--yellow);
+}
+
+.logo {
+  display: inline-block;
+  flex-shrink: 0;
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+
+.logo span {
+  display: block;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
+}
+
+nav a {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 4rem;
+
+  padding: 5rem max(1.5rem, calc((100% - 1200px) / 2));
+  overflow: hidden;
+  background: var(--yellow);
+}
+
+.hero h1 {
+  font-size: clamp(3.5rem, 7.5vw, 7rem);
+}
+
+.hero h1 span {
+  color: #674291;
+}
+
+.hero-description {
+  max-width: 40ch;
+  margin: 1.75rem 0 2rem;
+  font-size: 1.15rem;
+}
+
+.hero .button {
+  background: var(--paper);
+}
+
+.hero-art {
+  position: relative;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.hero-photo {
+  overflow: hidden;
+  border: var(--border);
+  border-radius: 48% 48% 1rem 1rem;
+  background: var(--lilac);
+  box-shadow: 10px 10px 0 var(--ink);
+  transform: rotate(4deg);
+}
+
+.hero-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.sticker {
+  position: absolute;
+  right: -0.5rem;
+  bottom: 1.5rem;
+
+  display: grid;
+  place-content: center;
+  width: 8rem;
+  aspect-ratio: 1;
+
+  border: var(--border);
+  border-radius: 50%;
+  background: var(--pink);
+
+  font-size: 1.4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+
+  transform: rotate(12deg);
+}
+
+.hero-spark {
+  position: absolute;
+  top: -2rem;
+  left: -1.5rem;
+  color: var(--ink);
+  font-size: 7rem;
+  line-height: 1;
+}
+
+/* ---------- Graphic divider ---------- */
+
+.ticker {
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
+  overflow: hidden;
+
+  padding: 1rem;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  background: var(--ink);
+  color: var(--yellow);
+
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+/* ---------- About ---------- */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-copy {
+  font-size: 1.1rem;
+}
+
+.about-copy p + p {
+  margin-top: 1rem;
+}
+
+/* ---------- Benefits ---------- */
+
+.benefits {
+  border-top: var(--border);
+  border-bottom: var(--border);
+  background: var(--lilac);
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+
+  margin-top: 3rem;
+  list-style: none;
+}
+
+.benefit-grid li {
+  padding: 2rem;
+  border: var(--border);
+  border-radius: 1rem;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.benefit-number {
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  aspect-ratio: 1;
+
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--yellow);
+  font-weight: 900;
+}
+
+.benefit-grid h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.6rem;
+}
+
+/* ---------- Dogs ---------- */
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+
+  margin-bottom: 3rem;
+}
+
+.section-heading > p {
+  max-width: 28ch;
+}
+
+.dog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.dog-card {
+  min-width: 0;
+  overflow: hidden;
+
+  border: var(--border);
+  border-radius: 1rem;
+  background: white;
+  box-shadow: var(--shadow);
+
+  transition: transform 180ms ease;
+}
+
+.dog-card:nth-child(odd) {
+  transform: rotate(-2deg);
+}
+
+.dog-card:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.dog-card:hover,
+.dog-card:focus-within {
+  transform: translateY(-0.5rem) rotate(0);
+}
+
+.dog-photo {
+  position: relative;
+  border-bottom: var(--border);
+  background: var(--mint);
+}
+
+.dog-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.dog-tag {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.75rem;
+  left: 0.65rem;
+
+  padding: 0.35rem 0.5rem;
+  border: 2px solid var(--ink);
+  border-radius: 2rem;
+  background: var(--yellow);
+
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.dog-card:nth-child(2) .dog-tag {
+  background: var(--pink);
+}
+
+.dog-card:nth-child(3) .dog-tag {
+  background: var(--lilac);
+}
+
+.dog-card:nth-child(4) .dog-tag {
+  background: var(--mint);
+}
+
+.dog-info {
+  padding: 1.25rem;
+}
+
+.dog-info h3 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.dog-meta {
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.dog-info > p:not(.dog-meta) {
+  font-size: 0.95rem;
+}
+
+.dog-info a {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-weight: 800;
+}
+
+.demo-note {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+}
+
+/* ---------- Contact ---------- */
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+
+  border-top: var(--border);
+  border-bottom: var(--border);
+  background: var(--mint);
+}
+
+.contact-copy > p:not(.eyebrow) {
+  max-width: 35ch;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.contact-flower {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: #674291;
+  font-size: 10rem;
+  line-height: 1;
+}
+
+form {
+  min-width: 0;
+  align-self: start;
+  padding: 2rem;
+
+  border: var(--border);
+  border-radius: 1rem;
+  background: var(--paper);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.form-field + .form-field {
+  margin-top: 1.25rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 800;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 0.8rem 1rem;
+
+  border: 2px solid var(--ink);
+  border-radius: 0.35rem;
+  background: white;
+  color: var(--ink);
+}
+
+textarea {
+  display: block;
+  min-height: 9rem;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background: #fffbea;
+}
+
+form .button {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.form-note {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  padding: 2.5rem max(1.5rem, calc((100% - 1200px) / 2));
+  background: var(--yellow);
+}
+
+.site-footer > p {
+  font-weight: 800;
+}
+
+.site-footer small {
+  flex-basis: 100%;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 65rem) {
+  .hero {
+    gap: 2rem;
+  }
+
+  .dog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .benefit-grid {
+    gap: 1rem;
+  }
+
+  .benefit-grid li {
+    padding: 1.25rem;
+  }
+
+  .contact {
+    gap: 2.5rem;
+  }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 44rem) {
+  .section-shell,
+  .hero {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .site-header {
+    align-items: start;
+    gap: 1.5rem;
+  }
+
+  nav {
+    justify-content: flex-end;
+    gap: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .hero,
+  .about,
+  .contact {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-art {
+    width: min(100%, 24rem);
+    margin: 1rem auto 0;
+  }
+
+  .hero-spark {
+    left: -0.5rem;
+  }
+
+  .about {
+    gap: 1.5rem;
+  }
+
+  .benefit-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading > p {
+    margin-top: 1rem;
+  }
+
+  .dog-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 26rem;
+    margin-inline: auto;
+  }
+
+  .contact-flower {
+    display: none;
+  }
+
+  form {
+    padding: 1.5rem;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
