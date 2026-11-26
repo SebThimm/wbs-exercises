@@ -4,9 +4,9 @@
 
     <head>
 
-        <meta charste=""UTF-8 />
+        <meta charset="UTF-8"/>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <meta
             name="description"
@@ -15,133 +15,766 @@
 
         <!-- add link for favicon 
         <link rel="icon" type="image/svg+xml" href="src/favicon.svg" />       -->
-        <link rel="stylesheet" href="style.css" />
+        
+        <title>Christopher — UX Designer</title>
 
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </head>
 
-    <body id="top">
+    <body id="top" class="m-0 bg-white font-sans text-gray-900">
 
-        <header class="site-header">
+        <header class="site-header absolute inset-x-0 top-0 z-20">
+            <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-6 md:px-10">
+                <a
+                    href="#hero"
+                    class="inline-block"
+                    aria-label="Kross home"
+                >
+                    <img
+                        src="images/icons/logo.svg"
+                        alt="kross"
+                        class="block h-8 w-auto"
+                    >
+                </a>
 
-            <a href="#hero" class="logo">Hi! I'm<br />Christopher<br />UX designer</a>
-            <nav aria-label="Main">
-                <ul class="nav-list">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#intro">About</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-
+                <nav aria-label="Main">
+                    <ul
+                        class="nav-list font-serif flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-white md:gap-x-8"    
+                    >
+                        <li>
+                            <a href="#hero" class="font-bold" aria-current="page">
+                                HOME
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#intro" class="hover:text-white/70">
+                                ABOUT
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#blog" class="hover:text-white/70">
+                                BLOG
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" class="hover:text-white/70">
+                                PORTFOLIO
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="hover:text-white/70">
+                                CONTACT
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </header>
 
         <main>
             
-            <section id="hero" class="hero">
-
-            </section>
-
-            <section id="intro">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris misi ut aliquip ex ea commodo consequat. duis aute irure dolor inb reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                <p>KNOW MORE</p>
-            </section>
-
-            <section id="skills" class="skills">
-                <h2>Skills</h2>
-
-                <ul>
-                    <li class="skill-item">
-                        <!-- <img src="" alt=""> -->
-                        <h3>Web Design</h3>
+            <section
+                id="hero"
+                class="hero relative isolate flex min-h-[540px] items-center bg-[#43248a] pb-28 pt-36 text-white md:min-h-[575px]"
+                aria-labelledby="hero-heading"
+            >
+                <div
+                    class="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+                >
+                    <img
+                        src="images/hero-leaf-purple.png"
+                        alt=""
+                        aria-hidden="true"
+                        class="absolute bottom-0 left-1/2 h-auto w-[110%] max-w-none -translate-x-1/2 translate-y-[40%] select-none"
+                    >
+                    <img
+                        src="images/hero-leaf-orange.png"
+                        alt=""
+                        aria-hidden="true"
+                        class="pointer-events-none absolute top-20 -right-26 z-0 h-auto w-[200px] select-none"
+                    >
+                    <!-- Dot grid below the heading -->
+                    <img
+                        src="images/hero-dots-grid.png"
+                        alt=""
+                        aria-hidden="true"
+                        class="pointer-events-none absolute top-[75%] left-[35%] z-0 h-auto w-24 -translate-x-1/2 select-none md:w-40 scale-45"
+                    >
+                    <!-- Dot line below the navigation, right of centre -->
+                    <img
+                        src="images/hero-dots-line.png"
+                        alt=""
+                        aria-hidden="true"
+                        class="pointer-events-none absolute top-28 left-[58%] z-0 h-auto w-24 select-none md:w-32 scale-70"
+                    >
+                    <!-- Rounded orange leaf to the left of the dot line -->
+                    <img
+                        src="images/hero-leaf-orange-rounded.png"
+                        alt=""
+                        aria-hidden="true"
+                        class="pointer-events-none absolute top-28 left-[40%] z-0 h-auto w-16 select-none md:w-24 scale-70"
+                    >
+                    <!-- Pink leaf: mostly cropped, with only its tip entering from the left -->
+                    <img
+                        src="images/hero-leaf-pink.png"
+                        alt=""
+                        aria-hidden="true"
+                        class="pointer-events-none absolute top-28 left-0 z-0 h-auto w-40 -translate-x-[55%] select-none md:w-56 scale-140"
+                    >
+                    <!-- Rounded pink leaf near the bottom, beneath the dot line -->
+                    <img
+                        src="images/hero-leaf-pink-round.png"
+                        alt=""
+                        aria-hidden="true"
+                        class="pointer-events-none absolute bottom-20 left-[60%] z-0 h-auto w-20 select-none md:w-28 scale-60"
+                    >
+                </div>
+                <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+                    <h1
+                        id="hero-heading"
+                        class="hero-heading max-w-2xl font-[Arial,Helvetica,sans-serif] text-4xl font-black [-webkit-text-stroke:1px_currentColor] leading-[1.15] tracking-tight sm:text-5xl md:ml-32 md:text-[56px]"
+                    >
+                        Hi! I'm<br>
+                        Christopher<br>
+                        UX designer
+                    </h1>
+                </div>
+                <div
+                    aria-hidden="true"
+                    class="pointer-events-none absolute bottom-0 left-[14%] z-10 w-20 translate-y-1/2 select-none md:w-28"
+                >
+                    <img
+                        src="images/hero-flow-turquoise.png"
+                        alt=""
+                        class="block h-auto w-full"
+                    >
+                </div>
+                <div>
+                    <!-- Turquoise leaf entering from the right -->
+                    <img
+                        src="images/hero-leaf-turquoise.png"
+                        alt=""
+                        aria-hidden="true"
+                        class="pointer-events-none absolute bottom-20 -right-4 z-0 w-24 select-none md:w-32"
+                    >
+                </div>
+                <ul
+                    class="social-links absolute bottom-10 left-6 flex flex-col gap-3 md:left-12"
+                >
+                    <li>
+                        <a
+                            href="https://www.linkedin.com/in/your-profile/"
+                            class="flex size-7 items-center justify-center rounded-sm hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                            aria-label="LinkedIn profile"
+                        >
+                            <img
+                                src="images/icons/linkedin.svg"
+                                alt=""
+                                class="size-4"
+                            >
+                        </a>
                     </li>
 
-                    <li class="skill-item">
-                        <!-- <img src="" alt=""> -->
-                        <h3>Logo Design</h3>
+                    <li>
+                        <a
+                            href="https://github.com/your-username"
+                            class="flex size-7 items-center justify-center rounded-sm hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                            aria-label="GitHub profile"
+                        >
+                            <img
+                                src="images/icons/github.svg"
+                                alt=""
+                                class="size-4 invert">
+                        </a>
                     </li>
 
-                    <li class="skill-item">
-                        <!-- <img src="" alt=""> -->
-                        <h3>After Effects</h3>
-                    </li>
-
-                    <li class="skill-item">
-                        <!-- <img src="" alt=""> -->
-                        <h3>Web Applications</h3>
+                    <li>
+                        <a
+                            href="https://www.facebook.com/your-username/"
+                            class="flex size-7 items-center justify-center rounded-sm hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                            aria-label="Facebook profile"
+                        >
+                            <img
+                                src="images/icons/facebook.svg"
+                                alt=""
+                                class="size-4"
+                            >
+                        </a>
                     </li>
                 </ul>
             </section>
 
-            <section id="experience" class="experience">
-                <h2>Experience</h2>
+            <section
+                id="intro"
+                class="intro bg-white px-24 py-12 text-center md:py-14"
+                aria-label="About Christopher"
+            >
+                <div>
+                    <p class="font-serif text-base leading-6 text-gray-800">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris misi ut aliquip ex ea commodo consequat. duis aute irure dolor inb reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                    <a
+                        href="#experience"
+                        class="intro-link mt-7 inline-block font-serif text-xs font-bold uppercase text-[#43248a] hover:underline underline-offset-4"
+                    >
+                        Know more
+                    </a>
+                </div>    
+            </section>
 
-                <ul class="experience-grid">
+            <section
+                class="skills px-8 pt-20 pb-24 md:px-16 lg:px-24"
+                aria-labelledby="skills-heading"
+            >
+                <div class="mx-auto max-w-5xl">
+                    <h2
+                        id="skills-heading"
+                        class="skills-heading mb-12 text-center font-sans text-4xl font-black"
+                    >
+                        Skills
+                    </h2>
+                    <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                        <li class="skill-item overflow-hidden rounded-sm bg-white shadow-[0_20px_40px_rgba(100,190,220,0.12)]">
+                            <img
+                                src="images/skills-1.png"
+                                alt=""
+                                class="block h-auto w-full"
+                            >
+                            <h3 class="px-3 py-4 text-center text-base">
+                                Web Design
+                            </h3>
+                        </li>
+                        <li class="skill-item overflow-hidden rounded-sm bg-white shadow-[0_20px_40px_rgba(100,190,220,0.12)]">
+                            <img
+                                src="images/skills-2.png"
+                                alt=""
+                                class="block h-auto w-full"
+                            >
+                            <h3 class="px-3 py-4 text-center text-base">
+                                Logo Design
+                            </h3>
+                        </li>
+                        <li class="skill-item overflow-hidden rounded-sm bg-white shadow-[0_20px_40px_rgba(100,190,220,0.12)]">
+                            <img
+                                src="images/skills-3.png"
+                                alt=""
+                                class="block h-auto w-full"
+                            >
+                            <h3 class="px-3 py-4 text-center text-base">
+                                After Effects
+                            </h3>
+                        </li>
+                        <li class="skill-item overflow-hidden rounded-sm bg-white shadow-[0_20px_40px_rgba(100,190,220,0.12)]">
+                            <img
+                                src="images/skills-4.png"
+                                alt=""
+                                class="block h-auto w-full"
+                            >
+                            <h3 class="px-3 py-4 text-center text-base">
+                                Web Applications
+                            </h3>
+                        </li>
+                    </ul>
+                </div>    
+            </section>
+
+            <section
+                id="experience"
+                class="experience px-8 pt-4 pb-24 md:px-16 lg:px-24"
+                aria-labelledby="experience-heading"
+            >
+                <div class="mx-auto max-w-5xl">
+                    <h2
+                        id="experience-heading"
+                        class="experience-heading mb-16 text-center font-sans text-4xl font-black"
+                    >
+                        Experience
+                    </h2>
+                    <ul class="experience-grid grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
+                        <li>
+                            <article class="experience-card text-center">
+                                <img
+                                    src="images/experience-1.png"
+                                    alt=""
+                                    class="mx-auto h-24 w-24 object-contain"
+                                >
+                                <p class="date-range mb-1 text-sm">
+                                    <time datetime="2007-01">Jan 2007</time> - <time datetime="2009-02">Feb 2009</time>
+                                </p>
+                                <h3 class="mb-1 text-lg">
+                                    Junior UX Designer
+                                </h3>
+                                <p class="company text-base text-neutral-400">
+                                    WEBEX
+                                </p>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="experience-card text-center">
+                                <img
+                                    src="images/experience-2.png"
+                                    alt=""
+                                    class="mx-auto h-24 w-24 object-contain"
+                                >
+                                <p class="date-range mb-1 text-sm">
+                                    <time datetime="2009-03">Mar 2009</time> - <time datetime="2014-08">Aug 2014</time>
+                                </p>
+                                <h3 class="mb-1 text-lg">
+                                    UX & UI Designer
+                                </h3>
+                                <p class="company text-base text-neutral-400">
+                                    AUGMEDIX
+                                </p>
+                            </article>
+                        </li>                        
+                        <li>
+                            <article class="experience-card text-center">
+                                <img
+                                    src="images/experience-3.png"
+                                    alt=""
+                                    class="mx-auto h-24 w-24 object-contain"
+                                >
+                                <p class="date-range mb-1 text-sm">
+                                    <time datetime="2014-09">Sep 2014</time> - Present
+                                </p>
+                                <h3 class="mb-1 text-lg">
+                                    Senior UI Designer
+                                </h3>
+                                <p class="company text-base text-neutral-400">
+                                    THEMEFISHER
+                                </p>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section
+                class="education relative px-8 py-20 md:px-16 lg:px-24"
+                aria-labelledby="education-heading"
+            >
+                <img
+                    src="images/education-wave.png"
+                    alt=""
+                    aria-hidden="true"
+                    class="pointer-events-none absolute inset-0 -z-10 h-full w-full select-none object-cover object top"
+                >
+                <div class="relative mx-auto max-w-5xl">
+                    <h2
+                        id="education-heading"
+                        class="education-heading mb-16 text-center font-sans text-4xl font-black"
+                    >
+                        Education
+                    </h2>
+                    <ul
+                        class="education-grid grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-y-16"
+                    >
+                        <li>
+                            <article class="education-card flex items-start gap-6 md:gap-8">
+                                <img
+                                    src="images/education-hat.png"
+                                    alt=""
+                                    class="h-20 w-20 shrink-0 rounded-full object-contain md:h-24 md:w-24"
+                                >
+                                <div class="min-w-0">
+                                    <p class="year mb-1 text-sm">
+                                        <time datetime="2006">2006</time>
+                                    </p>
+                                    <h3 class="mb-1 tetx-lg">
+                                        Masters in UX Design
+                                    </h3>
+                                    <p class="institute text-sm text-neutral-400">
+                                        Massachusetts Institute of Technology
+                                    </p>
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="education-card flex items-start gap-6 md:gap-8">
+                                <img
+                                    src="images/education-hat.png"
+                                    alt=""
+                                    class="h-20 w-20 shrink-0 rounded-full object-contain md:h-24 md:w-24"
+                                >
+                                <div class="min-w-0">
+                                    <p class="year mb-1 text-sm">
+                                        <time datetime="2004">2004</time>
+                                    </p>
+                                    <h3 class="mb-1 tetx-lg">
+                                        Honours in Fine Arts
+                                    </h3>
+                                    <p class="institute text-sm text-neutral-400">
+                                        Harvard University
+                                    </p>
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="education-card flex items-start gap-6 md:gap-8">
+                                <img
+                                    src="images/education-hat.png"
+                                    alt=""
+                                    class="h-20 w-20 shrink-0 rounded-full object-contain md:h-24 md:w-24"
+                                >
+                                <div class="min-w-0">
+                                    <p class="year mb-1 text-sm">
+                                        <time datetime="2000">2000</time>
+                                    </p>
+                                    <h3 class="mb-1 tetx-lg">
+                                        Higher Secondary Certificate
+                                    </h3>
+                                    <p class="institute text-sm text-neutral-400">
+                                        Cardiff School
+                                    </p>
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="education-card flex items-start gap-6 md:gap-8">
+                                <img
+                                    src="images/education-hat.png"
+                                    alt=""
+                                    class="h-20 w-20 shrink-0 rounded-full object-contain md:h-24 md:w-24"
+                                >
+                                <div class="min-w-0">
+                                    <p class="year mb-1 text-sm">
+                                        <time datetime="1998">1998</time>
+                                    </p>
+                                    <h3 class="mb-1 tetx-lg">
+                                        Secondary School Certificate
+                                    </h3>
+                                    <p class="institute text-sm text-neutral-400">
+                                        Cardiff School
+                                    </p>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section
+                class="services px-8 py-20 md:px-16 lg:px-24"
+                aria-labelledby="services-heading"
+            >
+                <div class="mx-auto max-w-5xl">
+                    <h2
+                        id="services-heading"
+                        class="services-heading mb-16 text-center font-sans text-4xl font-black"
+                    >
+                        Services
+                    </h2>
+                    <ul class="services-grid grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-0">
+                        <li>
+                            <article class="services-card h-full px-8 py-12 text-center">
+                                <img
+                                    src="images/services-ui.png"
+                                    alt=""
+                                    class="mx-auto mb-6 h-12 w-12 object-contain"
+                                >
+                                <h3 class="mb-4 text-base">UI Design</h3>
+                                <p class="description text-xs leading-relaxed">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="services-card h-full bg-indigo-900 px-8 py-12 text-center text-white shadow-[0_20px_40px_rgba(100,190,220,0.15)]">
+                                <img
+                                    src="images/services-ux.png"
+                                    alt=""
+                                    class="mx-auto mb-6 h-12 w-12 object-contain"
+                                >
+                                <h3 class="mb-4 text-base">UX Design</h3>
+                                <p class="description text-xs leading-relaxed">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="services-card h-full px-8 py-12 text-center">
+                                <img
+                                    src="images/services-interaction.png"
+                                    alt=""
+                                    class="mx-auto mb-6 h-12 w-12 object-contain"
+                                >
+                                <h3 class="mb-4 text-base">Interaction Design</h3>
+                                <p class="description text-xs leading-relaxed">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section
+                id="portfolio"
+                class="portfolio px-8 pb-24 md:px-16 lg:px-24"
+                aria-labelledby="portfolio-heading"
+            >
+                <div class="mx-auto max-w-5xl">
+                    <h2
+                        id="portfolio-heading"
+                        class="portfolio-heading mb-16 text-center font-sans text-4xl font-black"
+                    >
+                        Portfolio
+                    </h2>
+                    <ul class="portfolio-grid grid auto-rows[12rem] grid-cols-1 gap-4 sm:grid-cols-3 md:auto-rows-[14rem]">
+                        <li class="sm:row-span-2">
+                            <img
+                                src="images/portfolio-1.png"
+                                alt="Milk bottles"
+                                class="h-full w-full rounded-sm object-cover"
+                            >
+                        </li>
+                        <li>
+                            <img
+                                src="images/portfolio-2.png"
+                                alt="Yellow GameBoy"
+                                class="h-full w-full rounded-sm object-cover"
+                            >
+                        </li>
+                        <li>
+                            <img
+                                src="images/portfolio-3.png"
+                                alt="Red clock on light blue background"
+                                class="h-full w-full rounded-sm object-cover"
+                            >
+                        </li>
+                        <li>
+                            <img
+                                src="images/portfolio-4.png"
+                                alt="Playstation Controller on green background"
+                                class="h-full w-full rounded-sm object-cover"
+                            >
+                        </li>
+                        <li>
+                            <img
+                                src="images/portfolio-5.png"
+                                alt="Blue skateboard"
+                                class="h-full w-full rounded-sm object-cover"
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="testimonials" aria-labelledby="testimonials-heading">
+                <h2 id="testimonials-heading">Testimonials</h2>
+
+                <div class="testimonial-carousel">
+                    <ul class="testimonial-list">
+                        <li class="testimonial-slide" id="testimonial-1">
+                            <figure class="testimonial-card">
+                                <span class="quote-icon" aria-hidden="true">"</span>
+
+                                <blockquote>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elit, sed do eiusmod tempor incididunt ut labore et
+                                        dolore magna aliqua. Ut enim ad minim veniam,
+                                        <span class="highlight">
+                                            quis nostrud exercitation ullamco laboris nisi
+                                            ut aliquip ex ea commodo consequat.
+                                        </span>
+                                        Duis aute irure dolor in reprehenderit in voluptate
+                                        velit esse cillum dolore eu fugiat nulla pariatur.
+                                    </p>
+                                </blockquote>
+
+                                <figcaption>
+                                    <img
+                                        class="person-image"
+                                        src="images/jesica-gomez.jpg"
+                                        alt=""
+                                        width="72"
+                                        height="72"
+                                    >
+                                    <p class="person-name">Jesica Gomez</p>
+                                    <p class="person-title">CEO, Founder</p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="testimonial-slide" id="testimonial-2">
+                            <figure class="testimonial-card">
+                                <span class="quote-icon" aria-hidden="true">"</span>
+
+                                <blockquote>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elit, sed do eiusmod tempor incididunt ut labore et
+                                        dolore magna aliqua. Ut enim ad minim veniam,
+                                        <span class="highlight">
+                                            quis nostrud exercitation ullamco laboris nisi
+                                            ut aliquip ex ea commodo consequat.
+                                        </span>
+                                        Duis aute irure dolor in reprehenderit in voluptate
+                                        velit esse cillum dolore eu fugiat nulla pariatur.
+                                    </p>
+                                </blockquote>
+
+                                <figcaption>
+                                    <img
+                                        class="person-image"
+                                        src="images/sabrina-alpaca.jpg"
+                                        alt=""
+                                        width="72"
+                                        height="72"
+                                    >
+                                    <p class="person-name">Sabrina Alpaca</p>
+                                    <p class="person-title">Head of Product Design</p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="testimonial-slide" id="testimonial-3">
+                            <figure class="testimonial-card">
+                                <span class="quote-icon" aria-hidden="true">"</span>
+
+                                <blockquote>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                                        elit, sed do eiusmod tempor incididunt ut labore et
+                                        dolore magna aliqua. Ut enim ad minim veniam,
+                                        <span class="highlight">
+                                            quis nostrud exercitation ullamco laboris nisi
+                                            ut aliquip ex ea commodo consequat.
+                                        </span>
+                                        Duis aute irure dolor in reprehenderit in voluptate
+                                        velit esse cillum dolore eu fugiat nulla pariatur.
+                                    </p>
+                                </blockquote>
+
+                                <figcaption>
+                                    <img
+                                        class="person-image"
+                                        src="images/norbert-gala.jpg"
+                                        alt=""
+                                        width="72"
+                                        height="72"
+                                    >
+                                    <p class="person-name">Norbert Gala</p>
+                                    <p class="person-title">CMO</p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+
+                    <div
+                        class="testimonial-indicators"
+                        role="group"
+                        aria-label="Choose a testimonial"
+                    >
+                        <button
+                            type="button"
+                            class="indicator is-active"
+                            aria-label="Show testimonial 1 of 3"
+                            aria-controls="testimonial-1"
+                            aria-current="true"
+                        >
+                        </button>
+                        <button
+                            type="button"
+                            class="indicator"
+                            aria-label="Show testimonial 2 of 3"
+                            aria-controls="testimonial-2"
+                        >
+                        </button>
+                        <button
+                            type="button"
+                            class="indicator"
+                            aria-label="Show testimonial 3 of 3"
+                            aria-controls="testimonial-3"
+                        >
+                        </button>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="references" aria-label="References">
+                <ul class="reference-logos">
                     <li>
-                        <article class="experience-card">
-                            <!-- <img src="" alt=""> -->
-                            <p class="date-range">
-                                <time datetime="2007-01">Jan 2007</time> - <time datetime="2009-02">Feb 2009</time>
+                        <img src="images/client-1.svg" alt="Company 1">
+                    </li>
+                    <li>
+                        <img src="images/client-2.svg" alt="Company 2">
+                    </li>
+                    <li>
+                        <img src="images/client-3.svg" alt="Company 3">
+                    </li>
+                    <li>
+                        <img src="images/client-4.svg" alt="Company 4">
+                    </li>
+                    <li>
+                        <img src="images/client-5.svg" alt="Company 5">
+                    </li>
+                </ul>
+            </section>
+
+            <section id="blog" class="blog" aria-labelledby="blogs-heading">
+                <h2 id="blogs-heading" class="blogs-heading">Blogs</h2>
+
+                <ul class="blog-list">
+                    <li>
+                        <article class="blog-card">
+                            <img src="images/blogs-1.jpg" alt="Alternative 1">
+                            <h3>
+                                <a href="blog/amazon-income.html">
+                                    Amazon increases income by 1.5 mln USD
+                                </a>
+                            </h3>
+                            <p class="blog-description">
+                                A closer look at the factors behind the company's latest financial results.
                             </p>
-                            <h3>Junior UX Designer</h3>
-                            <p class="company">WEBEX</p>
+                            <p class="blog-category">E-Commerce</p>
                         </article>
                     </li>
                     <li>
-                        <article class="experience-card">
-                            <!-- <img src="" alt=""> -->
-                            <p class="date-range">
-                                <time datetime="2009-03">Mar 2009</time> - <time datetime="2014-08">Aug 2014</time>
+                        <article class="blog-card">
+                            <img src="images/blogs-2.jpg" alt="Alternative 2">
+                            <h3>
+                                <a href="blog/interface-design.html">
+                                    Creating simpler interfaces for everyday tasks.
+                                </a>
+                            </h3>
+                            <p class="blog-description">
+                                Exploring how thoughtful design can make digital products easier to use.
                             </p>
-                            <h3>UX & UI Designer</h3>
-                            <p class="company">AUGMEDIX</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article class="experience-card">
-                            <!-- <img src="" alt=""> -->
-                            <p class="date-range">
-                                <time datetime="2014-09">Sep 2014</time> - Present
-                            </p>
-                            <h3>Senior UI Designer</h3>
-                            <p class="company">THEMEFISHER</p>
+                            <p class="blog-category">Creative</p>
                         </article>
                     </li>
                 </ul>
-
             </section>
 
-            <section id="education">
-                <h2>Education</h2>
-            </section>
-
-            <section id="services">
-                <h2>Services</h2>
-            </section>
-
-            <section id="portfolio">
-                <h2>Portfolio</h2>
-            </section>
-
-            <section id="testimonials">
-                <h2>Testimonials</h2>
-            </section>
-
-            <section id="references">
-                <!-- Here we'll only show company logos that we worked with -->
-            </section>
-
-            <section id="blog">
-                <h2>Blogs</h2>
-            </section>
-
-            <section id="contact">
-                <h2>Contact Info</h2>
+            <section id="contact" class="contact" aria-labelledby="contact-heading">
+                <h2 id="contact-heading" class="contact-heading">Contact Info</h2>
                 <h3>Contact</h3>
-                <form class="contact-form" action="#" method="POST">
-                    <input type="text" name="name" placeholder="Full name" required>
-                    <input type="email" name="email" placeholder="email@example.com" required>
-                    <textarea name="message" rows="5" placeholder="Type message here" required></textarea>
+                <form class="contact-form" action="#" method="post">
+                    <label for="contact-name">Full name (required)</label>
+                    <input
+                        type="text"
+                        id="contact-name"
+                        name="name"
+                        autocomplete="name"
+                        required
+                    >
+                    <label for="contact-email">Email (required)</label>
+                    <input
+                        type="email"
+                        id="contact-email"
+                        name="email"
+                        placeholder="email@example.com"
+                        required
+                    >
+                    <label for="contact-message">Message (required)</label>
+                    <textarea
+                        id="contact-message"
+                        name="message"
+                        rows="5"
+                        placeholder="Type message here"
+                        required
+                    ></textarea>
                     <button type="submit">Send</button>
                 </form>
                 <address class="contact-info">
@@ -163,11 +796,11 @@
             </section>
 
         </main>
-    
-    </body>
 
-    <footer>
-        <a>&copy Kross. All rights reserved 2018</a>
-    </footer>
+        <footer class="site-footer">
+            <p>&copy; Kross+seB. All rights reserved 2018-2026</p>
+        </footer>
+
+    </body>
 
 </html>
