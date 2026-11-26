@@ -560,245 +560,394 @@
                 </div>
             </section>
 
-            <section class="testimonials" aria-labelledby="testimonials-heading">
-                <h2 id="testimonials-heading">Testimonials</h2>
-
-                <div class="testimonial-carousel">
-                    <ul class="testimonial-list">
-                        <li class="testimonial-slide" id="testimonial-1">
-                            <figure class="testimonial-card">
-                                <span class="quote-icon" aria-hidden="true">"</span>
-
-                                <blockquote>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna aliqua. Ut enim ad minim veniam,
-                                        <span class="highlight">
-                                            quis nostrud exercitation ullamco laboris nisi
-                                            ut aliquip ex ea commodo consequat.
-                                        </span>
-                                        Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur.
-                                    </p>
-                                </blockquote>
-
-                                <figcaption>
-                                    <img
-                                        class="person-image"
-                                        src="images/jesica-gomez.jpg"
-                                        alt=""
-                                        width="72"
-                                        height="72"
-                                    >
-                                    <p class="person-name">Jesica Gomez</p>
-                                    <p class="person-title">CEO, Founder</p>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li class="testimonial-slide" id="testimonial-2">
-                            <figure class="testimonial-card">
-                                <span class="quote-icon" aria-hidden="true">"</span>
-
-                                <blockquote>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna aliqua. Ut enim ad minim veniam,
-                                        <span class="highlight">
-                                            quis nostrud exercitation ullamco laboris nisi
-                                            ut aliquip ex ea commodo consequat.
-                                        </span>
-                                        Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur.
-                                    </p>
-                                </blockquote>
-
-                                <figcaption>
-                                    <img
-                                        class="person-image"
-                                        src="images/sabrina-alpaca.jpg"
-                                        alt=""
-                                        width="72"
-                                        height="72"
-                                    >
-                                    <p class="person-name">Sabrina Alpaca</p>
-                                    <p class="person-title">Head of Product Design</p>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li class="testimonial-slide" id="testimonial-3">
-                            <figure class="testimonial-card">
-                                <span class="quote-icon" aria-hidden="true">"</span>
-
-                                <blockquote>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna aliqua. Ut enim ad minim veniam,
-                                        <span class="highlight">
-                                            quis nostrud exercitation ullamco laboris nisi
-                                            ut aliquip ex ea commodo consequat.
-                                        </span>
-                                        Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu fugiat nulla pariatur.
-                                    </p>
-                                </blockquote>
-
-                                <figcaption>
-                                    <img
-                                        class="person-image"
-                                        src="images/norbert-gala.jpg"
-                                        alt=""
-                                        width="72"
-                                        height="72"
-                                    >
-                                    <p class="person-name">Norbert Gala</p>
-                                    <p class="person-title">CMO</p>
-                                </figcaption>
-                            </figure>
-                        </li>
-                    </ul>
-
-                    <div
-                        class="testimonial-indicators"
-                        role="group"
-                        aria-label="Choose a testimonial"
+            <section
+                class="testimonials relative isolate bg-indigo-900 px-8 py-20"
+                aria-labelledby="testimonials-heading"
+            >
+                <!-- Decorations -->
+                <div
+                    class="pointer-events-none absolute inset-0 -z-10"
+                    aria-hidden="true"
+                >
+                    <!-- Faint background dots -->
+                    <div class="absolute inset-0 overflow-hidden">
+                        <img
+                            src="images/testimonials-map.png"
+                            alt=""
+                            class="h-full w-full object-cover opacity-70"
+                        >
+                    </div>
+                    <!-- Orange dot grid: extends above the section -->
+                    <img
+                        src="images/testimonials-dots.png"
+                        alt=""
+                        class="absolute -top-8 left-[8%] h-auto w-12 md:w-16"
                     >
-                        <button
-                            type="button"
-                            class="indicator is-active"
-                            aria-label="Show testimonial 1 of 3"
-                            aria-controls="testimonial-1"
-                            aria-current="true"
+                    <!-- Vertical orange dots, right (missing asset) -->
+                    <img
+                        src="images/hero-dots-grid.png"
+                        alt=""
+                        class="absolute top-1/4 right-[5%] h-auto w-8 md:w-12"
+                    >
+                    <!-- Orange leaf, top right -->
+                    <img
+                        src="images/hero-leaf-orange-rounded.png"
+                        alt=""
+                        class="absolute top-6 right-[14%] h-auto w-12 md:w-16"
+                    >
+                    <!-- Pink round leaf, left -->
+                    <img
+                        src="images/hero-leaf-pink-round.png"
+                        alt=""
+                        class="absolute bottom-1/4 left-[8%] h-auto w-12 md:w-16"
+                    >
+                    <!-- Turquoise leaf, bottom right -->
+                    <img
+                        src="images/hero-flow-turquoise.png"
+                        alt=""
+                        class="absolute -bottom-6 right-[18%] h-auto w-14 md:w-20 rotate-190"
+                    >
+                </div>
+                <div class="mx-auto max-w-3xl text-center">
+                    <h2
+                        id="testimonials-heading"
+                        class="mb-10 font-sans text-4xl text-white font-black"
+                    >
+                        Testimonials
+                    </h2>
+                    <div class="testimonial-carousel">
+                        <ul class="testimonial-list">
+                            <li class="testimonial-slide" id="testimonial-1">
+                                <figure class="testimonial-card">
+                                    <span
+                                        class="quote-icon mb-4 block text-6xl text-white font-black leading-none"
+                                        aria-hidden="true"
+                                    >
+                                        "
+                                    </span>
+
+                                    <blockquote>
+                                        <p class="text-sm text-white leading-relaxed md:text-base">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit, sed do eiusmod tempor incididunt ut labore et
+                                            dolore magna aliqua. Ut enim ad minim veniam,
+                                            <span class="highlight text-cyan-300">
+                                                quis nostrud exercitation ullamco laboris nisi
+                                                ut aliquip ex ea commodo consequat.
+                                            </span>
+                                            Duis aute irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla pariatur.
+                                        </p>
+                                    </blockquote>
+
+                                    <figcaption class="mt-8">
+                                        <img
+                                            class="person-image mx-auto mb-3 h-[72px] w-[72px] rounded-sm object-cover"
+                                            src="images/testimonials-jesica-gomez.png"
+                                            alt=""
+                                        >
+                                        <p class="person-name text-sm text-white">Jesica Gomez</p>
+                                        <p class="person-title text-xs text-white/50">CEO, Founder</p>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <!--
+                            <li class="testimonial-slide" id="testimonial-2">
+                                <figure class="testimonial-card">
+                                    <span class="quote-icon" aria-hidden="true">"</span>
+
+                                    <blockquote>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit, sed do eiusmod tempor incididunt ut labore et
+                                            dolore magna aliqua. Ut enim ad minim veniam,
+                                            <span class="highlight">
+                                                quis nostrud exercitation ullamco laboris nisi
+                                                ut aliquip ex ea commodo consequat.
+                                            </span>
+                                            Duis aute irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla pariatur.
+                                        </p>
+                                    </blockquote>
+
+                                    <figcaption>
+                                        <img
+                                            class="person-image"
+                                            src="images/sabrina-alpaca.jpg"
+                                            alt=""
+                                            width="72"
+                                            height="72"
+                                        >
+                                        <p class="person-name">Sabrina Alpaca</p>
+                                        <p class="person-title">Head of Product Design</p>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li class="testimonial-slide" id="testimonial-3">
+                                <figure class="testimonial-card">
+                                    <span class="quote-icon" aria-hidden="true">"</span>
+
+                                    <blockquote>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit, sed do eiusmod tempor incididunt ut labore et
+                                            dolore magna aliqua. Ut enim ad minim veniam,
+                                            <span class="highlight">
+                                                quis nostrud exercitation ullamco laboris nisi
+                                                ut aliquip ex ea commodo consequat.
+                                            </span>
+                                            Duis aute irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla pariatur.
+                                        </p>
+                                    </blockquote>
+
+                                    <figcaption>
+                                        <img
+                                            class="person-image"
+                                            src="images/norbert-gala.jpg"
+                                            alt=""
+                                            width="72"
+                                            height="72"
+                                        >
+                                        <p class="person-name">Norbert Gala</p>
+                                        <p class="person-title">CMO</p>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            -->
+                        </ul>
+
+                        <div
+                            class="testimonial-indicators mt-6 flex items-center justify-center gap-1"
+                            role="group"
+                            aria-label="Choose a testimonial"
                         >
-                        </button>
-                        <button
-                            type="button"
-                            class="indicator"
-                            aria-label="Show testimonial 2 of 3"
-                            aria-controls="testimonial-2"
-                        >
-                        </button>
-                        <button
-                            type="button"
-                            class="indicator"
-                            aria-label="Show testimonial 3 of 3"
-                            aria-controls="testimonial-3"
-                        >
-                        </button>
+                            <button
+                                type="button"
+                                class="indicator is-active h-1 w-4 rounded-full bg-white"
+                                aria-label="Show testimonial 1 of 3"
+                                aria-controls="testimonial-1"
+                                aria-current="true"
+                            >
+                            </button>
+                            <button
+                                type="button"
+                                class="indicator h-1 w-2 rounded-full bg-white/40"
+                                aria-label="Show testimonial 2 of 3"
+                                aria-controls="testimonial-2"
+                            >
+                            </button>
+                            <button
+                                type="button"
+                                class="indicator h-1 w-2 rounded-full bg-white/40"
+                                aria-label="Show testimonial 3 of 3"
+                                aria-controls="testimonial-3"
+                            >
+                            </button>
+                        </div>
                     </div>
                 </div>
-
             </section>
 
-            <section class="references" aria-label="References">
-                <ul class="reference-logos">
-                    <li>
-                        <img src="images/client-1.svg" alt="Company 1">
-                    </li>
-                    <li>
-                        <img src="images/client-2.svg" alt="Company 2">
-                    </li>
-                    <li>
-                        <img src="images/client-3.svg" alt="Company 3">
-                    </li>
-                    <li>
-                        <img src="images/client-4.svg" alt="Company 4">
-                    </li>
-                    <li>
-                        <img src="images/client-5.svg" alt="Company 5">
-                    </li>
-                </ul>
+            <section
+                class="references px-8 py-16 md:px-16 lg:px-24"
+                aria-label="References"
+            >
+                <div class="mx-auto max-w-5xl">
+                    <ul class="reference-logos flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:justify-between">
+                        <li>
+                            <img
+                                src="images/references/envato.png"
+                                alt="Envato"
+                                class="block h-6 w-auto md:h-7"
+                            >
+                        </li>
+                        <li>
+                            <img
+                                src="images/references/sundance.png"
+                                alt="Sundance"
+                                class="block h-6 w-auto md:h-7"
+                            >
+                        </li>
+                        <li>
+                            <img
+                                src="images/references/slack.png"
+                                alt="Slack"
+                                class="block h-6 w-auto md:h-7"
+                            >
+                        </li>
+                        <li>
+                            <img
+                                src="images/references/airbnb.png"
+                                alt="AirBnB"
+                                class="block h-6 w-auto md:h-7"
+                            >
+                        </li>
+                        <li>
+                            <img
+                                src="images/references/forbes.png"
+                                alt="Forbes"
+                                class="block h-6 w-auto md:h-7"
+                            >
+                        </li>
+                    </ul>
+                </div>
             </section>
 
-            <section id="blog" class="blog" aria-labelledby="blogs-heading">
-                <h2 id="blogs-heading" class="blogs-heading">Blogs</h2>
-
-                <ul class="blog-list">
-                    <li>
-                        <article class="blog-card">
-                            <img src="images/blogs-1.jpg" alt="Alternative 1">
-                            <h3>
-                                <a href="blog/amazon-income.html">
-                                    Amazon increases income by 1.5 mln USD
-                                </a>
-                            </h3>
-                            <p class="blog-description">
-                                A closer look at the factors behind the company's latest financial results.
-                            </p>
-                            <p class="blog-category">E-Commerce</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article class="blog-card">
-                            <img src="images/blogs-2.jpg" alt="Alternative 2">
-                            <h3>
-                                <a href="blog/interface-design.html">
-                                    Creating simpler interfaces for everyday tasks.
-                                </a>
-                            </h3>
-                            <p class="blog-description">
-                                Exploring how thoughtful design can make digital products easier to use.
-                            </p>
-                            <p class="blog-category">Creative</p>
-                        </article>
-                    </li>
-                </ul>
-            </section>
-
-            <section id="contact" class="contact" aria-labelledby="contact-heading">
-                <h2 id="contact-heading" class="contact-heading">Contact Info</h2>
-                <h3>Contact</h3>
-                <form class="contact-form" action="#" method="post">
-                    <label for="contact-name">Full name (required)</label>
-                    <input
-                        type="text"
-                        id="contact-name"
-                        name="name"
-                        autocomplete="name"
-                        required
+            <section
+                id="blog"
+                class="blog px-8 pt-8 pb-24 md:px-16 lg:px-24"
+                aria-labelledby="blogs-heading"
+            >
+                <div class="mx-auto max-w-5xl">
+                    <h2
+                        id="blogs-heading"
+                        class="blogs-heading mb-16 text-center font-sans text-4xl font-black"
                     >
-                    <label for="contact-email">Email (required)</label>
-                    <input
-                        type="email"
-                        id="contact-email"
-                        name="email"
-                        placeholder="email@example.com"
-                        required
-                    >
-                    <label for="contact-message">Message (required)</label>
-                    <textarea
-                        id="contact-message"
-                        name="message"
-                        rows="5"
-                        placeholder="Type message here"
-                        required
-                    ></textarea>
-                    <button type="submit">Send</button>
-                </form>
-                <address class="contact-info">
-                    <div class="contact-item">
-                        <strong>Email</strong><br>
+                        Blogs
+                    </h2>
+                    <ul class="blog-list grid grid-cols-1 gap-8 md:grid-cols-3">
+                        <!-- Wide card: text left, image right -->
+                        <li class="md:col-span-2">
+                            <article
+                                class="blog-card flex h-full flex-col overflow-hidden rounded-sm bg-white shadow-[0_20px_40px_rgba(100,190,220,0.12)] md:flex-row-reverse"
+                            >
+                                <img
+                                    src="images/blogs-1.png"
+                                    alt=""
+                                    class="h-56 w-full object-cover md:h-auto md:w-1/2"
+                                >
+                                <div class="flex flex-col justify-center p-8 md:w-1/2">
+                                    <h3 class="mb-4 text-base">
+                                        <a href="blog/amazon-income.html">
+                                            Amazon increases income by 1.5 mln USD
+                                        </a>
+                                    </h3>
+                                    <p class="blog-description mb-6 text-xs leading-relaxed">
+                                        A closer look at the factors behind the company's latest financial results.
+                                    </p>
+                                    <p class="blog-category w-fit rounded-sm bg-indigo-100 px-2 py-0.5 text-[10px] text-indigo-800">
+                                        E-Commerce
+                                    </p>
+                                </div>
+                            </article>
+                        </li>
+                        <!-- Narrow card: image on top -->
+                        <li>
+                            <article
+                                class="blog-card flex h-full flex-col overflow-hidden rounded-sm bg-white shadow-[0_20px_40px_rgba(100,190,220,0.12)]"
+                            >
+                                <img
+                                    src="images/blogs-2.png"
+                                    alt=""
+                                    class="h-48 w-full object-cover"
+                                >
+                                <div class="flex flex-1 flex-col p-6">
+                                    <h3 class="mb-3 text-base">
+                                        <a href="blog/interface-design.html">
+                                            Creating simpler interfaces for everyday tasks.
+                                        </a>
+                                    </h3>
+                                    <p class="blog-description mb-4 text-xs leading-relaxed">
+                                        Exploring how thoughtful design can make digital products easier to use.
+                                    </p>
+                                    <p class="blog-category mt-auto w-fit rounded-sm bg-rose-100 px-2 py-0.5 text-[10px] text-rose-700">
+                                        Creative
+                                    </p>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section
+                id="contact"
+                class="contact bg-[linear-gradient(to_bottom,#ede9fe_0,#ede9fe_20rem,#262626_20rem)]
+           px-8 pt-12 pb-16 md:px-16"
+                aria-labelledby="contact-heading"
+            >
+                <h2
+                    id="contact-heading"
+                    class="contact-heading mb-16 text-center font-sans text-4xl font-black"
+                >
+                    Contact Info
+                </h2>
+                <div
+                    class="mx-auto max-w-xl rounded-md bg-white px-8 py-8 shadow-[0_20px_60px_rgba(0,0,0,0.35)] md:px-10"
+                >
+                    <h3 class="mb-10 text-center text-base">Contact</h3>
+                    <form class="contact-form space-y-8" action="#" method="post">
+                        <div>
+                            <div>
+                                <label for="contact-name" class="sr-only">Full name (required)</label>
+                                <input
+                                    type="text"
+                                    id="contact-name"
+                                    name="name"
+                                    placeholder="Full Name"
+                                    autocomplete="name"
+                                    required
+                                    class="w-full border-0 border-b border-slate-200 bg-transparent pb-2 text-xs placeholder:text-slate-600 focus:border-indigo-800 focus:outline-none"
+                                >
+                            </div>
+                            <div>
+                                <label for="contact-email" class="sr-only">Email (required)</label>
+                                <input
+                                    type="email"
+                                    id="contact-email"
+                                    name="email"
+                                    placeholder="email@example.com"
+                                    autocomplete="email"
+                                    required
+                                    class="w-full border-0 border-b border-slate-200 bg-transparent pb-2 text-xs placeholder:text-slate-600 focus:border-indigo-800 focus:outline-none"
+                                >
+                            </div>
+                        </div>
+                        <div>
+                            <label for="contact-message" class="sr-only">Message (required)</label>
+                            <textarea
+                                id="contact-message"
+                                name="message"
+                                rows="3"
+                                placeholder="Type message here"
+                                required
+                                class="w-full resize-none border-0 border-b border-slate-200 bg-transparent pb-2 text-xs placeholder:text-slate-600 focus:border-indigo-800 focus:outline-none"
+                            ></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button
+                                type="submit"
+                                class="w-full max-w-[204px] rounded-sm bg-indigo-800 px-6 py-2 text-sm text-white transition hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-800"
+                            >
+                                Send
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <address class="contact-info mx-auto mt-16 grid max-w-4xl gap-8 text-white not-italic md:grid-cols-3">
+                    <div class="contact-item text-sm">
+                        <strong class="mb-1 block text-xs font-normal text-white/50">Email</strong>
                         <a href="mailto:steve.fruits@email.com">steve.fruits@email.com</a>
                     </div>
 
-                    <div class="contact-item">
-                        <strong>Phone</strong><br>
+                    <div class="contact-item text-sm">
+                        <strong class="mb-1 block text-xs font-normal text-white/50">Phone</strong>
                         <a href="tel:+8802544658256">+880 2544 658 256</a>
                     </div>
 
-                    <div class="contact-item">
-                        <strong>Address</strong><br>
+                    <div class="contact-item text-sm">
+                        <strong class="mb-1 block text-xs font-normal text-white/50">Address</strong>
                         <span>125/A, CA Commercial Area, California, USA</span>
                     </div>
                 </address>
             </section>
-
         </main>
 
-        <footer class="site-footer">
-            <p>&copy; Kross+seB. All rights reserved 2018-2026</p>
+        <footer class="site-footer border-t border-white/10 bg-neutral-800 py-8 text-center">
+            <p class="text-[10px] text-white/60">
+                &copy; 2018&ndash;2026 Kross &amp; SebThimm. All rights reserved.
+            </p>
         </footer>
 
     </body>
